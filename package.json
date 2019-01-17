@@ -1,20 +1,33 @@
 {
-  "name": "starwars-express",
+  "name": "friendfinder",
   "version": "1.0.0",
-  "description": "",
+  "description": "An app that matches people based on survey results regarding personality",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.3",
     "jquery": "^3.3.1",
-    "nodemon": "^1.18.9",
-    "server": "^1.0.18"
+    "nodemon": "^1.18.9"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-Mallik/FriendFinder.git"
+  },
+  "keywords": [
+    "friendfinder",
+    "survey",
+    "personality",
+    "application",
+    "express",
+    "node"
+  ],
+  "author": "Ashraful Mallik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A-Mallik/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/A-Mallik/FriendFinder#readme"
 }
