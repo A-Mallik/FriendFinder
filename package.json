@@ -1,14 +1,11 @@
 {
-  "name": "friendfinder",
+  "name": "friendfinderapp",
   "version": "1.0.0",
   "description": "An app that matches people based on survey results regarding personality",
   "main": "server.js",
   "dependencies": {
     "jquery": "^3.3.1",
-    "nodemon": "^1.18.9",
-    "express":"*",
-    "body-parser":"*"
-    
+    "nodemon": "^1.18.9"
   },
   "devDependencies": {},
   "scripts": {
@@ -20,14 +17,9 @@
     "url": "git+https://github.com/A-Mallik/FriendFinder.git"
   },
   "keywords": [
-    "friendfinder",
-    "survey",
-    "personality",
-    "application",
-    "express",
-    "node"
+    "\"friendfinder\""
   ],
-  "author": "Ashraful Mallik",
+  "author": "\"survey\",",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/A-Mallik/FriendFinder/issues"
