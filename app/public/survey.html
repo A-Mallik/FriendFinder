@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Font Awesome Glyphicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  <script src="friends.js"></script>
+
+  <style>
+body{
+  color:white;
+  background-color: #330033;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+select{
+  color:black !important;
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>Survey Questions</h3>
+    <hr>
+    <h3><strong>About You</strong></h3>
+    <h4>Name (Required)</h4>
+    <input type="text" id="name" class="form-control" required>
+    <h4>Link to Photo Image (Required)</h4>
+    <input type="text" id="photo" class="form-control" required>
+    <hr>
+
+    <h3><strong>Question 1</strong></h3>
+    <h4>You like to read books.</h4>
+    <select class="chosen-select" id="q1">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 2</strong></h3>
+    <h4>You prefer to spend time with your hobbies than your friends.</h4>
+    <select class="chosen-select" id="q2">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+
+    <h3><strong>Question 3</strong></h3>
+    <h4>You can handle yourself under stressful situations</h4>
+    <select class="chosen-select" id="q3">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+<!--
+    <h3><strong>Question 4</strong></h3>
+    <h4>You like to travel and explore new places.</h4>
+    <select class="chosen-select" id="q4">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+
+    <h3><strong>Question 5</strong></h3>
+    <h4>You value material posesssions.</h4>
+    <select class="chosen-select" id="q5">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+
+    <h3><strong>Question 6</strong></h3>
+    <h4>You have a pet.</h4>
+    <select class="chosen-select" id="q6">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+
+    <h3><strong>Question 7</strong></h3>
+    <h4>You would rather talk than listen in a group session.</h4>
+    <select class="chosen-select" id="q7">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 8</strong></h3>
+    <h4>You consider yourself a creative.</h4>
+    <select class="chosen-select" id="q8">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 9</strong></h3>
+    <h4>You consider yourself an outgoing person.</h4>
+    <select class="chosen-select" id="q9">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 10</strong></h3>
+    <h4>You would rather sleep in then get up early.</h4>
+    <select class="chosen-select" id="q10">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select> -->
+
+    <br>
+    <br>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+     Submit</button>
+  <br />
+  <br />
+
+  </div>
+
+  <!-- Modal -->
+  <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog" >
+
+      <!-- Modal content-->
+      <div class="modal-content"style="color:black;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="" style="height:200px;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+ // -------Function to compare two arrays and return difference (using this to detect result)
+function findDiffOfScore(array1,array2){
+    var result = 0;
+    for(var i = 0; i < array1.length;i++){
+            result += Math.abs(array1[i] - array2[i]);
+    }
+    console.log("result of function that Jeff Fixed: " + result);
+    return result;
+  }
+  // // -------------
+  // $.get("/api/friends/:friends", function(data) {
+  //   console.log(data);
+  //   console.log("Yes");
+  // });
+
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+
+      // Form validation
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+
+        $(".chosen-select").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+      // If all required fields are filled
+      if (validateForm()) {
+        // Create an object for the user"s data
+        var userData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val()
+            // $("#q4").val(),
+            // $("#q5").val(),
+            // $("#q6").val(),
+            // $("#q7").val(),
+            // $("#q8").val(),
+            // $("#q9").val(),
+            // $("#q10").val()
+          ]
+        };
+        // AJAX post the data to the friends API.
+        $.post("/api/friends", userData, function(data) { //userData being the data that was entered from the survey file
+
+          console.log("userData:" + JSON.stringify(userData));
+          console.log("data" + JSON.stringify(data));
+  // ----------------.get info-------------------------------------------------------------------------------
+  //               $.get("/api/friends/",function(apiData) {
+  //                 console.log(JSON.stringify(apiData));
+  // //                 // =============================================================================
+                      // var tempResult = 999;
+                      var results = 0;
+                      var tempresult = 999;
+                      var booltest = true;
+
+                      var tempArrayPics = ["1","2"]; // hold all the matches for pics (for multiple matches?)
+                                    for(var i = 0; i < data.length; i++){
+                                      console.log("USER DATA: " , userData);
+                                      console.log("DATA :" , data[i])
+                                      var resultName;
+                                      // console.log("Show me the magic" + testArray(addFriend.scores,friends[i].scores));
+                                      if(userData.name != data[i].name){
+                                        results =  findDiffOfScore(userData.scores,data[i].scores);
+                                        if(results < tempresult){
+                                          tempresult = results;
+                                          tempArrayPics[0] = data[i].name;
+                                          tempArrayPics[1] = data[i].photo;
+                                          // booltest = true;
+                                        }
+
+                                      }
+                                      console.log("Testing: " ,   tempArrayPics[0] );
+                                      console.log("New Fresh Results: " + results);
+                                      // if((resultsAlt < results) && userData.name !== data[i].name){
+
+
+                                            // return tempArrayPics[];
+
+                                      // }
+
+
+                                      $("#match-name").text(tempArrayPics[0]);
+                                      $("#match-img").attr("src", tempArrayPics[1]);
+                                      $("#results-modal").modal("show");
+
+                                          // console.log("Result Name: " + resultName + ": " + tempResult);
+                                          // console.log("temp results: " + tempArrayPics);
+                                          // console.log("is this even working" );
+                                    }
+
+
+                               // console.log("Final Result Name: " + resultName + ": " + tempResult);
+                               // console.log(tempObject);
+  // // // =============================================================================
+  //                 });  // .get ending
+  // // =============================================================================
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
+
+      console.log(tempArrayPics);
+
+ });
+  </script>
+
+</body>
+
+</html>
