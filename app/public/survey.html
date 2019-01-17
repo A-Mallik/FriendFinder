@@ -74,7 +74,7 @@ select{
       <option value="5">5 (Strongly Agree)</option>
     </select>
 
-<!--
+
     <h3><strong>Question 4</strong></h3>
     <h4>You like to travel and explore new places.</h4>
     <select class="chosen-select" id="q4">
@@ -153,7 +153,7 @@ select{
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
-    </select> -->
+    </select>
 
     <br>
     <br>
@@ -199,10 +199,6 @@ function findDiffOfScore(array1,array2){
     return result;
   }
   // // -------------
-  // $.get("/api/friends/:friends", function(data) {
-  //   console.log(data);
-  //   console.log("Yes");
-  // });
 
     $("#submit").on("click", function(event) {
       event.preventDefault();
@@ -232,14 +228,14 @@ function findDiffOfScore(array1,array2){
           scores: [
             $("#q1").val(),
             $("#q2").val(),
-            $("#q3").val()
-            // $("#q4").val(),
-            // $("#q5").val(),
-            // $("#q6").val(),
-            // $("#q7").val(),
-            // $("#q8").val(),
-            // $("#q9").val(),
-            // $("#q10").val()
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
           ]
         };
         // AJAX post the data to the friends API.
@@ -247,16 +243,14 @@ function findDiffOfScore(array1,array2){
 
           console.log("userData:" + JSON.stringify(userData));
           console.log("data" + JSON.stringify(data));
-  // ----------------.get info-------------------------------------------------------------------------------
-  //               $.get("/api/friends/",function(apiData) {
-  //                 console.log(JSON.stringify(apiData));
-  // //                 // =============================================================================
-                      // var tempResult = 999;
-                      var results = 0;
-                      var tempresult = 999;
-                      var booltest = true;
 
-                      var tempArrayPics = ["1","2"]; // hold all the matches for pics (for multiple matches?)
+
+ // =============================================================================
+
+                      var results = 0;
+                      var tempresult = 999; // high number value just to make sure the numbers get replaced
+
+                      var tempDataArray = ["1","2"]; // holds the match data, (for multiple matches?)
                                     for(var i = 0; i < data.length; i++){
                                       console.log("USER DATA: " , userData);
                                       console.log("DATA :" , data[i])
@@ -266,43 +260,26 @@ function findDiffOfScore(array1,array2){
                                         results =  findDiffOfScore(userData.scores,data[i].scores);
                                         if(results < tempresult){
                                           tempresult = results;
-                                          tempArrayPics[0] = data[i].name;
-                                          tempArrayPics[1] = data[i].photo;
-                                          // booltest = true;
+                                          tempDataArray[0] = data[i].name;
+                                          tempDataArray[1] = data[i].photo;
                                         }
 
                                       }
-                                      console.log("Testing: " ,   tempArrayPics[0] );
+                                      console.log("Testing: " ,   tempDataArray[0] );
                                       console.log("New Fresh Results: " + results);
-                                      // if((resultsAlt < results) && userData.name !== data[i].name){
 
-
-                                            // return tempArrayPics[];
-
-                                      // }
-
-
-                                      $("#match-name").text(tempArrayPics[0]);
-                                      $("#match-img").attr("src", tempArrayPics[1]);
+                                      $("#match-name").text(tempDataArray[0]);
+                                      $("#match-img").attr("src", tempDataArray[1]);
                                       $("#results-modal").modal("show");
 
-                                          // console.log("Result Name: " + resultName + ": " + tempResult);
-                                          // console.log("temp results: " + tempArrayPics);
-                                          // console.log("is this even working" );
                                     }
-
-
-                               // console.log("Final Result Name: " + resultName + ": " + tempResult);
-                               // console.log(tempObject);
-  // // // =============================================================================
-  //                 });  // .get ending
-  // // =============================================================================
+// =============================================================================
         });
       } else {
         alert("Please fill out all fields before submitting!");
       }
 
-      console.log(tempArrayPics);
+      console.log(tempDataArray);
 
  });
   </script>
