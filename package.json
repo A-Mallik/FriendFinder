@@ -10,11 +10,11 @@
   },
   "dependencies": {
 
-    `"express":"*",`
+    "express":"*",
     
-    `"body-parser":"*",`
+    "body-parser":"*",
     
-    `"bcrypt": "^0.8.5"`
+    "bcrypt": "^0.8.5"
     },
   "devDependencies": {},
   "scripts": {
