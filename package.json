@@ -6,11 +6,7 @@
   "dependencies": {
     "jquery": "^3.3.1",
     "nodemon": "^1.18.9",
-    "express":"*",
-    
-    "body-parser":"*",
-    
-    "bcrypt": "^0.8.5"
+    "express":"*"
     },
   "devDependencies": {},
   "scripts": {
